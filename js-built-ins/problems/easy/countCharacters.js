@@ -19,17 +19,12 @@
   - `npm run test-countChar`
 */
 
-const countCharacters = (statement) => {
-  let result = {};
-  for (let i = 0; i < statement.length; i++) {
-    let char = statement.charAt(i);
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
+function countCharacters(inputString) {
+  const countObj = {}
+  for (let i = 0; i < inputString.length; i++) {
+    countObj[inputString[i]] = (countObj[inputString[i]] ?? 0) + 1
   }
-  return result;
-};
+  return countObj
+}
 module.exports = countCharacters;
 

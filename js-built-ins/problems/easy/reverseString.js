@@ -20,6 +20,16 @@
 
 function reverseString(str) {
   // Your code here
+  let reversedArr = str.split("")
+  let i = 0, j = str.length - 1;
+  while (i < j) {
+    let temp = reversedArr[i]
+    reversedArr[i] = reversedArr[j]
+    reversedArr[j] = temp
+    i++
+    j--
+  }
+  return reversedArr.join("")
 }
 
 module.exports = reverseString;
