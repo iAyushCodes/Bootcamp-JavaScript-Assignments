@@ -22,6 +22,25 @@
 */
 function compression(str) {
   // Your code here
+  
+  if(str.length === 0) return ""
+  
+  let answer = ""
+  let currentChar = str[0]
+  let count = 1
+  
+  for (let i = 1; i < str.length; i++) {
+    if (str[i] === currentChar) count++
+    else {
+      answer += count > 1 ? `${currentChar}${count}` : `${currentChar}`
+      currentChar = str[i]
+      count = 1
+    }
+  }
+  
+  answer += count > 1 ? `${currentChar}${count}` : `${currentChar}`
+  
+  return answer
 }
 
 module.exports = compression;

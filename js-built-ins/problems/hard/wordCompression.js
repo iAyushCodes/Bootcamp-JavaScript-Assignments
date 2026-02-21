@@ -22,8 +22,33 @@
 */
 
 
+
+
 function compressWords(arr) {
   // Your code here
+  
+  if(arr.length === 0) return []
+  
+  let result = []
+  let currentWord = arr[0]
+  let count = 1
+  
+  
+  
+    // [apple banana apple banana banana]
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] === currentWord) {
+      count++
+    } else {
+      result.push(count > 1 ? `${currentWord}${count}` : `${currentWord}`)
+      currentWord = arr[i]
+      count = 1
+    }
+  }
+  
+  result.push(count > 1 ? `${currentWord}${count}` : `${currentWord}`)
+  
+  return result
 }
 
 

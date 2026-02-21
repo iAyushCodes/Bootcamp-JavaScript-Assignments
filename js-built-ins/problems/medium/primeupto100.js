@@ -17,6 +17,19 @@
 
 function getPrimesUpTo100() {
   // Your code here
+  const primes = []
+  for (let i = 2; i <= 100; i++) {
+    let flag = true
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        flag = false
+      }
+    }
+    if (flag) {
+      primes.push(i)
+    }
+  }
+  return primes
 }
 
 module.exports = { getPrimesUpTo100 };

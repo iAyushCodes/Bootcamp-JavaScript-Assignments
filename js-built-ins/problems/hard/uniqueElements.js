@@ -19,7 +19,11 @@
 */
 
 function getUniqueElements(arr) {
-  // Your code here
+  const unique = new Set([])
+  for (let i = 0; i < arr.length; i++) {
+    unique.add(arr[i])
+  }
+  return [...unique]
 }
 
 module.exports = getUniqueElements;
